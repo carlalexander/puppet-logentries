@@ -29,12 +29,6 @@ class logentries::package {
     require => Exec['add-pgp.mit.edu']
   }
 
-  exec { 'add-pgp.mit.edu':
-    command => 'gpg --keyserver pgp.mit.edu --recv-keys C43C79AD && gpg -a --export C43C79AD | apt-key add -',
-    unless  => 'apt-key list | grep -c C43C79AD',
-    require => Exec['logentries.list']
-  }
-
   package { 'python-setproctitle':
     ensure  => latest,
     require => Exec['add-pgp.mit.edu'],
