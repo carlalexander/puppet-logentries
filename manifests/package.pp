@@ -31,7 +31,7 @@ class logentries::package {
 
   package { 'python-setproctitle':
     ensure  => latest,
-    require => Exec['add-pgp.mit.edu'],
+    require => Exec['logentries.list'],
   }
 
   package { 'logentries':
