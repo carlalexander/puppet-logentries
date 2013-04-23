@@ -16,8 +16,8 @@
 class logentries::service {
   # Service package depends on the config
   package { 'logentries-daemon':
-    ensure  => latest,
-    require => Package['logentries'],
+    ensure => latest,
+    notify => Service['logentries'],
   }
 
   service { "logentries":
