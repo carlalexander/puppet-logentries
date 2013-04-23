@@ -38,9 +38,4 @@ class logentries::package {
     ensure  => latest,
     require => Package['python-setproctitle'],
   }
-
-  package { 'logentries-daemon':
-    ensure  => latest,
-    require => Package['logentries'],
-  }
 }
