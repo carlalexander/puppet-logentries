@@ -25,7 +25,7 @@ class logentries::config (
   }
 
   exec { 'le-register':
-    command     => "le register --account-key=${account_key}",
-    creates     => "/etc/le/config"
+    command => "le register --account-key=${account_key}",
+    creates => "/etc/le/config"
   }
 }
