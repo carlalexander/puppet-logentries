@@ -22,6 +22,7 @@ define logentries::resource::log (
   exec { "logentries-follow-${filename}":
     command => "le follow ${filename}",
     unless  => "le followed ${filename}",
-    notify  => Service['logentries']
+    notify  => Service['logentries'],
+    require => Package['logentries']
   }
 }
