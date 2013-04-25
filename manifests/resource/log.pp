@@ -20,8 +20,8 @@ define logentries::resource::log (
   }
 
   exec { "logentries-follow-${filename}":
-    cmd    => "le follow ${filename}",
-    unless => "le followed ${filename}",
-    notify => Service['logentries']
+    command => "le follow ${filename}",
+    unless  => "le followed ${filename}",
+    notify  => Service['logentries']
   }
 }
